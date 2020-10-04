@@ -61,9 +61,9 @@ namespace MatrixSpace
       {
           for (int w = 0; w < Width; ++w) 
           {
-              Console.Write("{0} ", GetElementValue(w, h));
+              Console.Write("{0}\v", GetElementValue(w, h));
           }
-          Console.Write("\n");
+          Console.Write("\t");
       }
     }
 
@@ -102,8 +102,9 @@ namespace MatrixSpace
     }
     public static Matrix operator *(Matrix l, Matrix r)
     {
-      var _height = r.Height;
-      var _width = l.Width;
+      var _height = l.Height;
+      var _width = r.Width;
+      Console.WriteLine($"{_width} {_height}");
       if (_height == _width) 
       {
         List<int> values = new List<int>();

@@ -5,8 +5,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Matrix A = new Matrix(2, 2, new int[] {2, -3, 4, -6});
-        Matrix B = new Matrix(2, 2, new int[] {9, -6, 6, -4});
+        Matrix A = new Matrix(1, 4, new int[] { 0, -1, 2, 5 });
+        Matrix B = new Matrix(4, 1, new int[] { 1, -1, 3, 7 });
         Console.WriteLine("Matrix A:");
         A.Print();
         Console.WriteLine("Matrix B:");
