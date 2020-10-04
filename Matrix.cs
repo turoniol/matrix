@@ -61,9 +61,9 @@ namespace MatrixSpace
       {
           for (int w = 0; w < Width; ++w) 
           {
-              Console.Write("{0}\v", GetElementValue(w, h));
+              Console.Write("{0}\t", GetElementValue(w, h));
           }
-          Console.Write("\t");
+          Console.Write("\n");
       }
     }
 
@@ -102,22 +102,22 @@ namespace MatrixSpace
     }
     public static Matrix operator *(Matrix l, Matrix r)
     {
-      var _height = l.Height;
-      var _width = r.Width;
-      Console.WriteLine($"{_width} {_height}");
-      if (_height == _width) 
+      var new_height = l.Height;
+      var new_width = r.Width;
+      
+      if (l.Width == r.Height) 
       {
         List<int> values = new List<int>();
 
-        for (int h = 1; h <= _height; ++h)
+        for (int h = 1; h <= new_height; ++h)
         {
-          for (int w = 1; w <= _width; ++w) 
+          for (int w = 1; w <= new_width; ++w) 
           {
             values.Add(CalculateScalar(l.GetLine(h), r.GetColumn(w)));
           }
         }
 
-        return new Matrix(_width, _height, values.ToArray());
+        return new Matrix(new_width, new_height, values.ToArray());
       }
       Console.WriteLine("Fail *.");
       return null;
